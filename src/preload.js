@@ -5,7 +5,7 @@ const apiObj = {
 
     onCount: (callback) => ipcRenderer.on('count-from-main', (e, arg1) => callback(arg1)),
 
-    sendPromise: (msg) => ipcRenderer.invoke('promise-msg',msg)
+    sendPromise: () => ipcRenderer.invoke('anim-txt')
 }
 
 contextBridge.exposeInMainWorld('bridgeAPI', apiObj);

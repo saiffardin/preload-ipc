@@ -19,8 +19,8 @@ sendMsgBtn.addEventListener('click', () => {
 })
 
 
-getMemoryBtn.addEventListener('click', async ()=> {
-    let result = await window.bridgeAPI.sendPromise("Hello CPU");
+getMemoryBtn.addEventListener('click', async () => {
+    let result = await window.bridgeAPI.sendPromise();
 
-    console.log(result);
+    console.log('in render:', result);
 })

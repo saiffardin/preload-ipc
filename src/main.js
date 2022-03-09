@@ -49,7 +49,25 @@ setInterval(() => {
 }, 2000)
 
 
-ipcMain.handle('promise-msg', (e, arg1) => {
-    console.log(arg1);
-    return process.getCPUUsage()
+ipcMain.handle('anim-txt', (e) => {
+    const fs = require('fs');
+
+    let filePath = path.join(__dirname, 'anim.txt')
+
+    return new Promise((resolve, reject) => {
+
+        fs.readFile(filePath, function (err, data) {
+            if (err) {
+                reject(err);
+                return;
+            }
+
+            data = data.toString();
+
+            console.log('in main:', data);
+            resolve(data);
+        })
+    });
+
 })
+
