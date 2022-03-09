@@ -17,3 +17,10 @@ sendMsgBtn.addEventListener('click', () => {
     console.log(inpTxt.value);
     window.bridgeAPI.sendMsg(inpTxt.value);
 })
+
+
+getMemoryBtn.addEventListener('click', async ()=> {
+    let result = await window.bridgeAPI.sendPromise("Hello CPU");
+
+    console.log(result);
+})

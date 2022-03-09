@@ -1,3 +1,5 @@
+console.time('start-timer')
+
 const {app, BrowserWindow, ipcMain} = require('electron')
 const path = require('path')
 
@@ -14,6 +16,8 @@ function createWindow() {
 
     win.loadFile(path.join(__dirname, 'index.html'));
     win.webContents.openDevTools();
+
+    console.timeEnd('start-timer');
 }
 
 app.whenReady().then(() => {
@@ -44,4 +48,8 @@ setInterval(() => {
     count++;
 }, 2000)
 
-// win.webContents.send('count-from-main', count);
+
+ipcMain.handle('promise-msg', (e, arg1) => {
+    console.log(arg1);
+    return process.getCPUUsage()
+})
