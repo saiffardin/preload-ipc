@@ -1,0 +1,24 @@
+{
+  "name": "preload-ipc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saiffardin/preload-ipc.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saiffardin/preload-ipc/issues"
+  },
+  "homepage": "https://github.com/saiffardin/preload-ipc#readme",
+  "devDependencies": {
+    "electron": "^17.1.1"
+  }
+}
